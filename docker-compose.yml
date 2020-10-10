@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  cubesql:
+    build: .
+    ports:
+      - "4430:4430"
+    image: sommeru/cubesql:5.7.2.001
+    container_name: cubesql
+    restart: unless-stopped
+    volumes:
+      - ~/cubesqlfiles/data:/var/opt/cubesql
+      - ~/cubesqlfiles/etc:/etc/opt
